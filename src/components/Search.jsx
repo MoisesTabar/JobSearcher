@@ -18,9 +18,10 @@ function Search(){
         setError(false);
         
         const request = await axiosClient.get(input);
-        const response = await request.data;
+        const response = await request.data.contents;
+
         console.log(response);
-    }
+    }   
 
     return(
         <div className="search-wrapper">
