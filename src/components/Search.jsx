@@ -3,10 +3,9 @@ import React, { useState } from 'react';
 import axiosClient from '../config/axios.config';
 import Error from './Error';
 
-function Search(props){
+function Search(){
     const [input, setInput] = useState('');
     const [error, setError] = useState(false);
-    const { onResults = [] } = props
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -19,11 +18,11 @@ function Search(props){
         setError(false);
         
         const request = await axiosClient.get(input);
-        const response = await request.data.contents;
+        const response = await request.data;
 
-        console.log(JSON.parse(response));
+        const { contents = [] } = response
 
-        onResults(JSON.parse(response));
+        console.log(contents);
     }   
 
     return(
