@@ -1,0 +1,11 @@
+.jobs-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 16px;
+}
+  
+.jobs-items{
+    margin-bottom: 24px;
+    width: 50%;
+}
